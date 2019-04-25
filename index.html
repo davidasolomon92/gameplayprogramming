@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <title>David Solomon-Gameplay Programming-Home</title>
+</head>
+
+<body>
+  <div id="page-wrap">
+    <div class="header">
+      <div class="header-title">
+        <h1>David Solomon</h1>
+        <h2>Gameplay Programming Portfolio</h2>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home/Portfolio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/resume.html">Resume/Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/demos.html">Other Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="app" class="content">
+      <div class="post">
+        <h1>Intro</h1>
+        <p> &nbsp &nbsp &nbsp &nbsp This is set up as blog of sorts to allow me to display the work I've done on Brigham Young University's game project "Avast Ye",
+          for which I was Design Lead/Co-Programming Lead. Each section includes a description of the process we went through to develop each mechanic; the problems we faced along the way,
+          the solutions we tried, as well as videos and/or images of the mechanic in the game at various stages. At the end of each section there is also a brief list of the specific things I worked on related to each mechanic.</p>
+        <p></p>
+        <h2>Brief Explanation of Avast Ye</h2>
+        <p> &nbsp &nbsp &nbsp &nbsp "Avast Ye" BYU Animation's video game project for the 2018/2019 school year.
+          It is an action adventure game in which you play as Captain Kate, a rogue princess ant that has turned
+          to a life of piracy. In search of treasure you must use your skills as a captain to guide your small crew
+          through territory of enemy cockroaches to reach your goal.
+        </p>
+        <p>"Avast Ye" was originally designed around the player having 3 ally crew members:</p>
+        <ul>
+          <li>
+            <p> Torrez, the Bull Ant</p>
+          </li>
+          <li>
+            <p> Flint, the Fire Ant</p>
+          </li>
+          <li>
+            <p> Luna, the Moth Witch Doctor</p>
+          </li>
+        </ul>
+        <p>However, due to some setbacks, we had to cut Luna in order to get the game polished for our E3 submission. Because of this, she is not seen in most of the most recent videos, but she will be returning for
+          the version of the game that will be released on Steam.</p>
+      </div>
+      <div class="post">
+        <h2> Links to Sections:</h2>
+        <a href="#abilities">Abilities and Follow-Up System</a>
+        <p></p>
+        <a href="#enemyai">Enemy AI</a>
+        <p></p>
+        <a href="#targeting">Targeting System</a>
+      </div>
+      <div class="post">
+        <a name="abilities"></a>
+        <h1>Abilities and the Follow-Up System</h1>
+        <p> &nbsp &nbsp &nbsp &nbsp Since the beginning of "Avast Ye" we knew we wanted the player to be a Captain. Not just that the character they would play would have the title "Captain", but we wanted to give the player the feeling that
+          they were in command. We also knew that we wanted to play into the fact that the player character and their crew were ants. This turned into the idea that we would give the player several crew members that were differnt
+          kinds of ant or bugs and thus had varying abilities of their own. As Captain, the player would be able to direct their crew in how these abilities should be used. The question then became "how do we allow the player to easily
+          control several characters at once on a controller?" One of the earliest ideas I had was that of an ability wheel similar to the one in Bioware's "Mass Effect", which I implemented and can be seen in the video below.
+        </p>
+        <video width="640" height="480" controls>
+          <source src="/videos/AbilityWheel.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p> &nbsp &nbsp &nbsp &nbsp This worked, but it felt like the player was taken out of the action too much. We needed something that was, as one of our pillars said, "Short plan, high action". We needed the player to plan quickly, and not be
+          stuck slowing down or pausing time in an ability wheel. After considering what to do I turned to the new "God of War" game for inspiration. Atreus is a perfect example of an ally AI who in helpful, but not overpowered, and is easy
+          to control. In fact there is a button dedicated only to him the entire game. The player taps it to make him fire arrows, and holds it to activate his special ability. I thought this would be really helpful for our AI companions.
+          So we gave each crew member their own button and two abilities: a tap and a hold (the hold generally being the more powerful of the two.) These abilities could be used in combat, as well as in world exploration and puzzle-solving.</p>
+        <video width="640" height="480" controls>
+          <source src="/videos/OldAbilities.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p> &nbsp &nbsp &nbsp &nbsp This was great, but it wasn't as engaging as we wanted. It felt like something was missing. Then Patrick Spencer, the Tech Lead/Co-Programming Lead, found inspiration from the film "Avengers". Particularly
+          the scene where they finally team up in New York and uses their abilities together against the alien invasion. He then implemented the first version of what we would later call the "Follow-Up System".
+          In this first implementation, certain actions, (that we called "Set-Ups") could trigger a possible Follow-Up. For example, if the Captain knocked an enemy into the air with her heavy attack, a prompt would appear to press the
+          Bull Ant's button. If this button was pressed the Bull Ant would charge the enemy while still in the air, sending them flying extra far. This prompt was only available for a brief moment, similar to a quick time event,
+          but without a negative consequence if it was missed. It was just an opportunity to team up with your crew more. This became the main mechanic of our game.
+        </p>
+        <p> &nbsp &nbsp &nbsp &nbsp However, in this first iteration, each Set-Up was tied to one specific Follow-Up. The knock-up only triggered a Follow-Up from the Bull Ant, and you had to use a dash attack to
+          trigger a Follow-Up from the Fire Ant. This proved to be too much for a lot of players to remember, as well as difficult for us to teach to a new player. I then altered the Follow-Up system to allow for any crew member
+          to follow up on any Set-Up that wasn't their own. I also changed it so that every crew member's Hold ability was a Set-Up, and many of the crew Follow-Ups were also Set-Ups. This way, the player could experiement
+          with different Follow-Ups to different Set-Ups as well as chain Follow-Ups together.
+        </p>
+        <p>The following videos are of the current crew abilities and Follow-Ups as well as some examples of chaining Follow-Ups together.</p>
+        <video width="640" height="480" controls>
+          <source src="/videos/AbilitiesAndCombos.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            <p>System for commanding Crew Members to use Abilities</p>
+          </li>
+          <li>
+            <p><a href="#targeting">Ability Targeting System</a></p>
+          </li>
+          <li>
+            <p>Logic for Crew Ability Cooldowns</p>
+          </li>
+          <li>
+            <p>Implementation of all Crew Abilities and Follow-Ups</p>
+          </li>
+          <li>
+            <p>Refinement of Follow-Up System</p>
+          </li>
+          <li>
+            <p>Implementation of all Captain Follow-Ups</p>
+          </li>
+          <li>
+            <p>Implementation of Captain Spin Attack Set-Up</p>
+          </li>
+        </ul>
+      </div>
+      <div class="post">
+        <a name="enemyai"></a>
+        <h1>Enemy AI</h1>
+        <p> &nbsp &nbsp &nbsp &nbsp Enemy AI is one of the things we iterated on the most.
+        </p>
+      </div>
+      <div class="post">
+        <a name="targeting"></a>
+        <h1>Ability Targeting</h1>
+        <p>We wanted the targeting of abilities to be easy and intuitive. We didn't want them to be difficult to aim, and we also wanted the player to know beforehand who or what they were
+          targeting. Also, because crew abilities can target both enemies and environmental objects, the targeting system needed to be able to accommodate for this.
+        </p>
+        <video width="640" height="480" controls>
+          <source src="/videos/Targeting.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+/*
+#214166 blue
+#B29F50 yellow tan
+#737373 dark grey
+#D9D9D9 light grey
+#0D0D0D black
+*/
+body {
+  font-family: 'Assistant', sans-serif;
+  font-size: 20px;
+  background: #0D0D0D;
+  padding: 0px;
+  margin: 0px;
+}
+
+#page-wrap {
+  width: 100%;
+  margin: 80px auto;
+  background-color: #0D0D0D;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 0;
+  min-height: 100%;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: #214166;
+  background-color: #B29F50;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link {
+  color: #0D0D0D;
+}
+
+.bg-dark {
+  background-color: #737373 !important;
+}
+
+.navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0px;
+  background-color: #0D0D0D
+}
+
+.navbar-nav {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+nav li {
+  display: inline-block;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  display: flex;
+  padding: 20px 100px 20px 100px;
+  background-color: #214166;
+  color: #D9D9D9;
+  margin: auto;
+}
+
+#main-photo {
+  border-radius: 15px;
+}
+
+.header-title {
+  margin-top: 10px;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+.header-title h1, .header-title h2 {
+  margin: 0px;
+}
+
+.header-title h2 {
+  border-top: 1px solid #fff;
+}
+
+/* Content */
+.content {
+  padding: 20px 100px 0px 100px;
+  background-color: #0D0D0D;
+  margin: auto;
+}
+
+.post h2 {
+  font-size: 1.5em;
+}
+
+/* Admin */
+.heading {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.heading h2 {
+  margin: 0px;
+  margin-left: 10px;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/* Masonry */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.post-list {
+  column-gap: 1.5em;
+}
+
+.post {
+  margin: 0 0 1.5em;
+  display: inline-block;
+  width: 90%;
+  background-color: #D9D9D9;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.post h1 {
+  font-size: 2.5em;
+}
+
+.post h2 {
+  font-size: 1.5em;
+}
+
+.post img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.post video {
+  display: block;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.video_text {
+  text-align: center;
+}
