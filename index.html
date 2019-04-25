@@ -91,19 +91,13 @@
           kinds of ant or bugs and thus had varying abilities of their own. As Captain, the player would be able to direct their crew in how these abilities should be used. The question then became "how do we allow the player to easily
           control several characters at once on a controller?" One of the earliest ideas I had was that of an ability wheel similar to the one in Bioware's "Mass Effect", which I implemented and can be seen in the video below.
         </p>
-        <video width="640" height="480" controls>
-          <source src="/videos/AbilityWheel.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/Y21xcpA10f4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text"> Early "Avast Ye" Ability Wheel</p>
         <p> &nbsp &nbsp &nbsp &nbsp This worked, but it felt like the player was taken out of the action too much. We needed something that was, as one of our pillars said, "Short plan, high action". We needed the player to plan quickly, and not be
           stuck slowing down or pausing time in an ability wheel. After considering what to do I turned to the new "God of War" game for inspiration. Atreus is a perfect example of an ally AI who in helpful, but not overpowered, and is easy
           to control. In fact there is a button dedicated only to him the entire game. The player taps it to make him fire arrows, and holds it to activate his special ability. I thought this would be really helpful for our AI companions.
           So we gave each crew member their own button and two abilities: a tap and a hold (the hold generally being the more powerful of the two.) These abilities could be used in combat, as well as in world exploration and puzzle-solving.</p>
-        <video width="640" height="480" controls>
-          <source src="/videos/OldAbilities.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/C8XF1H5Vb70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text"> Older versions of Crew Abilities</p>
         <p> &nbsp &nbsp &nbsp &nbsp This was great, but it wasn't as engaging as we wanted. It felt like something was missing. Then Patrick Spencer, the Tech Lead/Co-Programming Lead, found inspiration from the film "Avengers". Particularly
           the scene where they finally team up in New York and uses their abilities together against the alien invasion. He then implemented the first version of what we would later call the "Follow-Up System".
@@ -117,21 +111,16 @@
           with different Follow-Ups to different Set-Ups as well as chain Follow-Ups together.
         </p>
         <p>The following videos are of the current crew abilities and Follow-Ups as well as some examples of chaining Follow-Ups together.</p>
-        <video width="640" height="480" controls>
-          <source src="/videos/BullAnt1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/ufh9xX8OoLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text">Current Bull Ant Abilities and Follow-Ups</p>
-        <video width="640" height="480" controls>
-          <source src="/videos/FireAnt1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/cpswH6xKu_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text">Current Fire Ant Abilities and Follow-Ups</p>
-        <video width="640" height="480" controls>
-          <source src="/videos/Chaining.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/C1QraeCjAyM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text"> Some Examples of Chaining Follow-Ups</p>
+
         <h2>What I Did</h2>
         <ul>
           <li>
@@ -185,11 +174,10 @@
           Crew Abilities being AOE. However, the fact that enemies could constantly be switching targets often lead to very chaotic and spread out fights that didn't always have clear groups of enemies on which to use Crew Abilities.
           This lead to players using their abilities less and picking the enemies off one at a time with their sword.
         </p>
-        <video width="640" height="480" controls>
-          <source src="/videos/NonGroupAI.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/-fev-INKZRo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text"> Example of early Enemy AI behavior</p>
+
         <p> &nbsp &nbsp &nbsp &nbsp I then went to work on a new system in which enemies would be grouped more often, and thus create more enticing targets for Crew Abilities and Follow-Ups. The current system uses an Enemy AI Director
           to divide the enemies it controls into groups of 4 to 5 the best it can, picks a leader for the group, and then spawns a Group Director for each group. The Group Director then determines the actions the group should take. If the
           members of the crew are too spread out the Group Director will have them form up on the group leader. The Group Director also picks the target for the group and has the group move in a messy formation (they're pirate cockroaches, not
@@ -197,16 +185,10 @@
           to that target to attack. If the group leader dies or is the only surviving member of the group, the Group Director will disband the group and switch the remaining members to a more individualistic behavior (the one based on Spider-Man).
         </p>
 
-        <video width="640" height="480" controls>
-          <source src="/videos/Group1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/cnVJIW9RMw4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text">Director will try to make groups based on how close enemies are to each other</p>
 
-        <video width="640" height="480" controls>
-          <source src="/videos/Group2.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/TqiF6sIH0BQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text">Another example of Group AI behavior</p>
 
         <h2>What I Did</h2>
@@ -237,10 +219,8 @@
           targeting. Also, because crew abilities can target both enemies and environmental objects, the targeting system needed to be able to accommodate for this. The current system now targets the closest thing to the center of the screen
           , whether that is an enemy or an environmental object. What you are targeting is also clearly shown by the UI.
         </p>
-        <video width="640" height="480" controls>
-          <source src="/videos/Targeting1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/8Md5zdt8Lk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h2>What I Did</h2>
         <ul>
           <li>
