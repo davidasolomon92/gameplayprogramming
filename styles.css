@@ -7,7 +7,7 @@
 */
 body {
   font-family: 'Assistant', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   background: #0D0D0D;
   padding: 0px;
   margin: 0px;
@@ -159,4 +159,18 @@ html {
 
 .video_text {
   text-align: center;
+  font-size: 14px;
+}
+
+#about-image {
+  display: flex;
+  float: left;
+  width: 30%;
+  margin-top: 30px;
+}
+
+#about-text {
+  display: flex;
+  margin-top: 30px;
+  padding-left: 20px;
 }

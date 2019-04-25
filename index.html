@@ -37,6 +37,8 @@
         </ul>
       </div>
     </nav>
+
+
     <div id="app" class="content">
       <div class="post">
         <h1>Intro</h1>
@@ -65,6 +67,8 @@
         <p>However, due to some setbacks, we had to cut Luna in order to get the game polished for our E3 submission. Because of this, she is not seen in most of the most recent videos, but she will be returning for
           the version of the game that will be released on Steam.</p>
       </div>
+
+
       <div class="post">
         <h2> Links to Sections:</h2>
         <a href="#abilities">Abilities and Follow-Up System</a>
@@ -72,7 +76,13 @@
         <a href="#enemyai">Enemy AI</a>
         <p></p>
         <a href="#targeting">Targeting System</a>
+        <p></p>
+        <p>Ally AI (coming soon)</p>
+        <p>Anim Blueprint (coming soon)</p>
       </div>
+
+
+
       <div class="post">
         <a name="abilities"></a>
         <h1>Abilities and the Follow-Up System</h1>
@@ -85,6 +95,7 @@
           <source src="/videos/AbilityWheel.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <p class="video_text"> Early "Avast Ye" Ability Wheel</p>
         <p> &nbsp &nbsp &nbsp &nbsp This worked, but it felt like the player was taken out of the action too much. We needed something that was, as one of our pillars said, "Short plan, high action". We needed the player to plan quickly, and not be
           stuck slowing down or pausing time in an ability wheel. After considering what to do I turned to the new "God of War" game for inspiration. Atreus is a perfect example of an ally AI who in helpful, but not overpowered, and is easy
           to control. In fact there is a button dedicated only to him the entire game. The player taps it to make him fire arrows, and holds it to activate his special ability. I thought this would be really helpful for our AI companions.
@@ -93,6 +104,7 @@
           <source src="/videos/OldAbilities.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <p class="video_text"> Older versions of Crew Abilities</p>
         <p> &nbsp &nbsp &nbsp &nbsp This was great, but it wasn't as engaging as we wanted. It felt like something was missing. Then Patrick Spencer, the Tech Lead/Co-Programming Lead, found inspiration from the film "Avengers". Particularly
           the scene where they finally team up in New York and uses their abilities together against the alien invasion. He then implemented the first version of what we would later call the "Follow-Up System".
           In this first implementation, certain actions, (that we called "Set-Ups") could trigger a possible Follow-Up. For example, if the Captain knocked an enemy into the air with her heavy attack, a prompt would appear to press the
@@ -106,9 +118,20 @@
         </p>
         <p>The following videos are of the current crew abilities and Follow-Ups as well as some examples of chaining Follow-Ups together.</p>
         <video width="640" height="480" controls>
-          <source src="/videos/AbilitiesAndCombos.mp4" type="video/mp4">
+          <source src="/videos/BullAnt1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <p class="video_text">Current Bull Ant Abilities and Follow-Ups</p>
+        <video width="640" height="480" controls>
+          <source src="/videos/FireAnt1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video_text">Current Fire Ant Abilities and Follow-Ups</p>
+        <video width="640" height="480" controls>
+          <source src="/videos/Chaining.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video_text"> Some Examples of Chaining Follow-Ups</p>
         <h2>What I Did</h2>
         <ul>
           <li>
@@ -134,22 +157,96 @@
           </li>
         </ul>
       </div>
+
+
       <div class="post">
         <a name="enemyai"></a>
         <h1>Enemy AI</h1>
-        <p> &nbsp &nbsp &nbsp &nbsp Enemy AI is one of the things we iterated on the most.
+        <p> &nbsp &nbsp &nbsp &nbsp Enemy AI is one of the things we iterated on the most. We started out with Enemies that used AI perception and would aggro when they saw you, but decided that
+          because we didn't want stealth sections or for the player to be able to run and leave combat without killing everyone in an encounter, perception wasn't something worth keeping around.
+          Instead we would just start combat with trigger boxes. Once that was establish we had to decide how the AI would behave; how they would pick their targets, what their attack pattern would be, etc.
+          In one of the earliest renditions of Enemy AI, I had an Enemy AI Director that would pick targets for each Enemy assigned to it based on which enemies were closest to the Captain and her crew. I wanted
+          the number of enemies to be split somewhat evenly between the crew, however, so that the player wouldn't be overwhelmed, so I had the Director see which fourth of the enemies were closest
+          to the Captain, and have them target her, and then the fourth closest to the Bull Ant that weren't already targeting the Captain, and so on. The initial version of this had them unable to change their targets unless attacked by
+          another crew member, which caused some obvious issues when the player ran off after other enemies, so I later changed this targeting from a task executed once at the beginning of the behavior tree, to
+          a service that would run every second or so. This allowed enemies to switch targets more often and made it so that the Captain couldn't run behind some other enemies to escape the ones targeting her. The Enemy AI Director
+          also controlled which enemies could attack, so that only two or three could attack the same target at the same time, making sure the player wouldn't just get mobbed by a whole group.
         </p>
+        <p> &nbsp &nbsp &nbsp &nbsp Even with this, however, our Enemy AI didn't feel good in combat. The limited number of attackers and the attack pattern they had felt good when just the Captain was playing, but once we
+          had all the crew members in there it just didn't feel right. Something was missing and we weren't sure what it was. So we went and looked at the Enemy AI in some other games. In particular, we looked at the newest
+          Spider-Man game by Insomniac because it had a similar combat style, with the player character snapping to enemies and being very fast and mobile. After watching how their enemies behaved it seemed like
+          their melee enemies all had a random chance to attack that increased the closer they were to the player. This way a few of them would be attacking at a time, but most of them would just be hanging out in the back waiting.
+          So I tried to implement a similar system, giving enemies a chance to attack that was increased the closer they were to their target. I also added a modifier that would increase that chance to nearly 100% if no one was attacking, so that
+          there would always be at least one enemy attacking. I also created a new way enemies picked their targets. They would weight each of the possible targets based on distance, add an extra bit of weight to their current target (if they had
+          one) and then make a weighted random choice. This would also run every second or so, to allow them to switch targets if their current target got too far away. This worked well, but it ended up behaving very similarly to
+          the previous versions of Enemy AI; it felt great with just the Captain, but not with the whole crew.
+        </p>
+        <p> &nbsp &nbsp &nbsp &nbsp Finally we realized that the problem was with the playstyles these behaviors created. Our main mechanic, the Follow-Up System, was most satisfying when used on large groups of enemies due to most
+          Crew Abilities being AOE. However, the fact that enemies could constantly be switching targets often lead to very chaotic and spread out fights that didn't always have clear groups of enemies on which to use Crew Abilities.
+          This lead to players using their abilities less and picking the enemies off one at a time with their sword.
+        </p>
+        <video width="640" height="480" controls>
+          <source src="/videos/NonGroupAI.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video_text"> Example of early Enemy AI behavior</p>
+        <p> &nbsp &nbsp &nbsp &nbsp I then went to work on a new system in which enemies would be grouped more often, and thus create more enticing targets for Crew Abilities and Follow-Ups. The current system uses an Enemy AI Director
+          to divide the enemies it controls into groups of 4 to 5 the best it can, picks a leader for the group, and then spawns a Group Director for each group. The Group Director then determines the actions the group should take. If the
+          members of the crew are too spread out the Group Director will have them form up on the group leader. The Group Director also picks the target for the group and has the group move in a messy formation (they're pirate cockroaches, not
+          trained soldiers)
+          to that target to attack. If the group leader dies or is the only surviving member of the group, the Group Director will disband the group and switch the remaining members to a more individualistic behavior (the one based on Spider-Man).
+        </p>
+
+        <video width="640" height="480" controls>
+          <source src="/videos/Group1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video_text">Director will try to make groups based on how close enemies are to each other</p>
+
+        <video width="640" height="480" controls>
+          <source src="/videos/Group2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video_text">Another example of Group AI behavior</p>
+
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            <p>Group AI behavior</p>
+          </li>
+          <li>
+            <p>Enemy attack pattern behavior</p>
+          </li>
+          <li>
+            <p>Implementation of all Crew Abilities and Follow-Ups</p>
+          </li>
+          <li>
+            <p>Mini Boss Cockroach behavior (video coming soon)</p>
+          </li>
+          <li>
+            <p>Enemy Target Selection Logic</p>
+          </li>
+        </ul>
       </div>
+
+
       <div class="post">
         <a name="targeting"></a>
         <h1>Ability Targeting</h1>
-        <p>We wanted the targeting of abilities to be easy and intuitive. We didn't want them to be difficult to aim, and we also wanted the player to know beforehand who or what they were
-          targeting. Also, because crew abilities can target both enemies and environmental objects, the targeting system needed to be able to accommodate for this.
+        <p> &nbsp &nbsp &nbsp &nbsp We wanted the targeting of abilities to be easy and intuitive. We didn't want them to be difficult to aim, and we also wanted the player to know beforehand who or what they were
+          targeting. Also, because crew abilities can target both enemies and environmental objects, the targeting system needed to be able to accommodate for this. The current system now targets the closest thing to the center of the screen
+          , whether that is an enemy or an environmental object. What you are targeting is also clearly shown by the UI.
         </p>
         <video width="640" height="480" controls>
-          <source src="/videos/Targeting.mp4" type="video/mp4">
+          <source src="/videos/Targeting1.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            <p>Everything related to the targeting of abilities, and it's connection to the UI. (I did not create the UI art asset or do the UI animation, but I did program the logic to determine when it should be shown)</p>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
