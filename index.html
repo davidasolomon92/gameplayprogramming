@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
-  <title>David Solomon-Gameplay Programming-Home</title>
+  <title>David Solomon-Gameplay Programming/Design-Home</title>
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <div class="header">
       <div class="header-title">
         <h1>David Solomon</h1>
-        <h2>Gameplay Programming Portfolio</h2>
+        <h2>Gameplay Programming/Design Portfolio</h2>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -81,8 +81,10 @@
         <p></p>
         <a href="#targeting">Targeting System</a>
         <p></p>
+        <a href="#levelscripting">Level Scripting</a>
+        <p></p>
         <p>Ally AI (coming soon)</p>
-        <p>Anim Blueprint (coming soon)</p>
+        <p>Other Bits and Pieces (coming soon)</p>
       </div>
 
 
@@ -226,6 +228,37 @@
         <ul>
           <li>
             <p>Everything related to the targeting of abilities, and it's connection to the UI. (I did not create the UI art asset or do the UI animation, but I did program the logic to determine when it should be shown)</p>
+          </li>
+        </ul>
+      </div>
+
+
+      <div class="post">
+        <a name="levelscripting"></a>
+        <h1>Level Scripting</h1>
+        <p> &nbsp &nbsp &nbsp &nbsp After we finally nailed down our core mechanic, <a href="#abilities">the Follow-Up System</a>, we realized that because it was pretty different from any other games
+          most of our playtester had played, it was hard to make sure they understood the mechanics enough to use them effectively without us telling them exactly what to do. This made us realize that even though we
+          were only making a slice of a game for our submission to the E3 competition, we would probably need a tutorial section to help players get the hang of Follow-Ups. So the director, Jessica Runyan, and I
+          designed a tutorial area that would lead into the main level that was being built. We tried to create a tutorial that would teach players what they needed and hopefully be engaging enough that they wouldn't
+          just skip through all the text boxes.</p>
+
+        <p></p>
+        <p>This is the same video that is at the top of the page, but it shows off the tutorial area well, so if you didn't get the chance to watch it above, or if you don't remember it, here it is again.</p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/vGWIWArCCz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            <p>Layed out the landscape using the UE4 Landscape tool</p>
+          </li>
+          <li>
+            <p>Designed the enemy encounters and encampments</p>
+          </li>
+          <li>
+            <p>Designed and Implemented all the events and interactions required by the tutorial</p>
+          </li>
+          <li>
+            <p>Worked with UI created by another student (Dallin Pulsipher) to ensure the dialog was properly displayed at the correct moments</p>
           </li>
         </ul>
       </div>
