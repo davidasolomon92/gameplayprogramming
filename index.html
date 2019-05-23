@@ -42,9 +42,9 @@
     <div id="app" class="content">
       <div class="post">
         <h1>Intro</h1>
-        <p> &nbsp &nbsp &nbsp &nbsp This is set up as blog of sorts to allow me to display the work I've done on Brigham Young University's game project "Avast Ye",
-          for which I was Design Lead/Co-Programming Lead. Each section includes a description of the process we went through to develop each mechanic; the problems we faced along the way,
-          the solutions we tried, as well as videos and/or images of the mechanic in the game at various stages. At the end of each section there is also a brief list of the specific things I worked on related to each mechanic.</p>
+        <p> &nbsp &nbsp &nbsp &nbsp This is set up as a blog of sorts to allow me to display the work I've done on Brigham Young University's game project "Avast Ye",
+          for which I was Gameplay Programming/Design Lead. Each section starts with a brief list of the specific things I worked on related to the title mechanic. This is followed by a longer description of how the
+          mechanic came to be as well as videos or images of the mechanic in game.</p>
         <p></p>
         <h2>Brief Explanation of Avast Ye</h2>
         <p> &nbsp &nbsp &nbsp &nbsp "Avast Ye" BYU Animation's video game project for the 2018/2019 school year.
@@ -92,41 +92,7 @@
       <div class="post">
         <a name="abilities"></a>
         <h1>Abilities and the Follow-Up System</h1>
-        <p> &nbsp &nbsp &nbsp &nbsp Since the beginning of "Avast Ye" we knew we wanted the player to be a Captain. Not just that the character they would play would have the title "Captain", but we wanted to give the player the feeling that
-          they were in command. We also knew that we wanted to play into the fact that the player character and their crew were ants. This turned into the idea that we would give the player several crew members that were differnt
-          kinds of ant or bugs and thus had varying abilities of their own. As Captain, the player would be able to direct their crew in how these abilities should be used. The question then became "how do we allow the player to easily
-          control several characters at once on a controller?" One of the earliest ideas I had was that of an ability wheel similar to the one in Bioware's "Mass Effect", which I implemented and can be seen in the video below.
-        </p>
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/Y21xcpA10f4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="video_text"> Early "Avast Ye" Ability Wheel</p>
-        <p> &nbsp &nbsp &nbsp &nbsp This worked, but it felt like the player was taken out of the action too much. We needed something that was, as one of our pillars said, "Short plan, high action". We needed the player to plan quickly, and not be
-          stuck slowing down or pausing time in an ability wheel. After considering what to do I turned to the new "God of War" game for inspiration. Atreus is a perfect example of an ally AI who in helpful, but not overpowered, and is easy
-          to control. In fact there is a button dedicated only to him the entire game. The player taps it to make him fire arrows, and holds it to activate his special ability. I thought this would be really helpful for our AI companions.
-          So we gave each crew member their own button and two abilities: a tap and a hold (the hold generally being the more powerful of the two.) These abilities could be used in combat, as well as in world exploration and puzzle-solving.</p>
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/C8XF1H5Vb70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="video_text"> Older versions of Crew Abilities</p>
-        <p> &nbsp &nbsp &nbsp &nbsp This was great, but it wasn't as engaging as we wanted. It felt like something was missing. Then Patrick Spencer, the Tech Lead/Co-Programming Lead, found inspiration from the film "Avengers". Particularly
-          the scene where they finally team up in New York and uses their abilities together against the alien invasion. He then implemented the first version of what we would later call the "Follow-Up System".
-          In this first implementation, certain actions, (that we called "Set-Ups") could trigger a possible Follow-Up. For example, if the Captain knocked an enemy into the air with her heavy attack, a prompt would appear to press the
-          Bull Ant's button. If this button was pressed the Bull Ant would charge the enemy while still in the air, sending them flying extra far. This prompt was only available for a brief moment, similar to a quick time event,
-          but without a negative consequence if it was missed. It was just an opportunity to team up with your crew more. This became the main mechanic of our game.
-        </p>
-        <p> &nbsp &nbsp &nbsp &nbsp However, in this first iteration, each Set-Up was tied to one specific Follow-Up. The knock-up only triggered a Follow-Up from the Bull Ant, and you had to use a dash attack to
-          trigger a Follow-Up from the Fire Ant. This proved to be too much for a lot of players to remember, as well as difficult for us to teach to a new player. I then altered the Follow-Up system to allow for any crew member
-          to follow up on any Set-Up that wasn't their own. I also changed it so that every crew member's Hold ability was a Set-Up, and many of the crew Follow-Ups were also Set-Ups. This way, the player could experiement
-          with different Follow-Ups to different Set-Ups as well as chain Follow-Ups together.
-        </p>
-        <p>The following videos are of the current crew abilities and Follow-Ups as well as some examples of chaining Follow-Ups together.</p>
-
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/ufh9xX8OoLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="video_text">Current Bull Ant Abilities and Follow-Ups</p>
-
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/cpswH6xKu_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="video_text">Current Fire Ant Abilities and Follow-Ups</p>
-
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/C1QraeCjAyM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="video_text"> Some Examples of Chaining Follow-Ups</p>
-
+        <p></p>
         <h2>What I Did</h2>
         <ul>
           <li>
@@ -151,12 +117,68 @@
             <p>Implementation of Captain Spin Attack Set-Up</p>
           </li>
         </ul>
+        <p></p>
+        <h2>Further Explanation</h2>
+        <p> &nbsp &nbsp &nbsp &nbsp Since the beginning of "Avast Ye" we knew we wanted the player to be a Captain. Not just that the character they would play would have the title "Captain", but we wanted to give the player the feeling that
+          they were in command. We also knew that we wanted to play into the fact that the player character and their crew were ants. This turned into the idea that we would give the player several crew members that were differnt
+          kinds of ant or bugs and thus had varying abilities of their own. As Captain, the player would be able to direct their crew in how these abilities should be used. The question then became "how do we allow the player to easily
+          control several characters at once on a controller?" One of the earliest ideas I had was that of an ability wheel similar to the one in Bioware's "Mass Effect", which I implemented and can be seen in the video below.
+        </p>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/Y21xcpA10f4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text"> Early "Avast Ye" Ability Wheel</p>
+        <p> &nbsp &nbsp &nbsp &nbsp This worked, but it felt like the player was taken out of the action too much. We needed something that was, as one of our pillars said, "Short plan, high action". We needed the player to plan quickly, and not be
+          stuck slowing down or pausing time in an ability wheel. After considering what to do I turned to the new "God of War" game for inspiration. Atreus is a perfect example of an ally AI who in helpful, but not overpowered, and is easy
+          to control. In fact there is a button dedicated only to him the entire game. The player taps it to make him fire arrows, and holds it to activate his special ability. I thought this would be really helpful for our AI companions.
+          So we gave each crew member their own button and two abilities: a tap and a hold (the hold generally being the more powerful of the two.) These abilities could be used in combat, as well as in world exploration and puzzle-solving.</p>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/C8XF1H5Vb70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text"> Older versions of Crew Abilities</p>
+        <p> &nbsp &nbsp &nbsp &nbsp This was great, but it wasn't as engaging as we wanted. It felt like something was missing. Then Patrick Spencer, the Tech Lead, found inspiration from the film "Avengers". Particularly
+          the scene where they finally team up in New York and uses their abilities together against the alien invasion. He then implemented the first version of what we would later call the "Follow-Up System".
+          In this first implementation, certain actions, (that we called "Set-Ups") could trigger a possible Follow-Up. For example, if the Captain knocked an enemy into the air with her heavy attack, a prompt would appear to press the
+          Bull Ant's button. If this button was pressed the Bull Ant would charge the enemy while still in the air, sending them flying extra far. This prompt was only available for a brief moment, similar to a quick time event,
+          but without a negative consequence if it was missed. It was just an opportunity to team up with your crew more. This became the main mechanic of our game.
+        </p>
+        <p> &nbsp &nbsp &nbsp &nbsp However, in this first iteration, each Set-Up was tied to one specific Follow-Up. The knock-up only triggered a Follow-Up from the Bull Ant, and you had to use a dash attack to
+          trigger a Follow-Up from the Fire Ant. This proved to be too much for a lot of players to remember, as well as difficult for us to teach to a new player. I then altered the Follow-Up system to allow for any crew member
+          to follow up on any Set-Up that wasn't their own. I also changed it so that every crew member's Hold ability was a Set-Up, and many of the crew Follow-Ups were also Set-Ups. This way, the player could experiement
+          with different Follow-Ups to different Set-Ups as well as chain Follow-Ups together.
+        </p>
+        <p>The following videos are of the current crew abilities and Follow-Ups as well as some examples of chaining Follow-Ups together.</p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/ufh9xX8OoLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text">Current Bull Ant Abilities and Follow-Ups</p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/cpswH6xKu_o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text">Current Fire Ant Abilities and Follow-Ups</p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/C1QraeCjAyM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text"> Some Examples of Chaining Follow-Ups</p>
+
+
       </div>
 
 
       <div class="post">
         <a name="enemyai"></a>
         <h1>Enemy AI</h1>
+        <p></p>
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            <p>Group AI behavior</p>
+          </li>
+          <li>
+            <p>Enemy attack pattern behavior</p>
+          </li>
+          <li>
+            <p>Mini Boss Cockroach behavior (video coming soon)</p>
+          </li>
+          <li>
+            <p>Enemy Target Selection Logic</p>
+          </li>
+        </ul>
+        <p></p>
+        <h2>Further Explanation</h2>
         <p> &nbsp &nbsp &nbsp &nbsp Enemy AI is one of the things we iterated on the most. We started out with Enemies that used AI perception and would aggro when they saw you, but decided that
           because we didn't want stealth sections or for the player to be able to run and leave combat without killing everyone in an encounter, perception wasn't something worth keeping around.
           Instead we would just start combat with trigger boxes. Once that was establish we had to decide how the AI would behave; how they would pick their targets, what their attack pattern would be, etc.
@@ -197,55 +219,36 @@
         <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/TqiF6sIH0BQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <p class="video_text">Another example of Group AI behavior</p>
 
-        <h2>What I Did</h2>
-        <ul>
-          <li>
-            <p>Group AI behavior</p>
-          </li>
-          <li>
-            <p>Enemy attack pattern behavior</p>
-          </li>
-          <li>
-            <p>Mini Boss Cockroach behavior (video coming soon)</p>
-          </li>
-          <li>
-            <p>Enemy Target Selection Logic</p>
-          </li>
-        </ul>
+
       </div>
 
 
       <div class="post">
         <a name="targeting"></a>
         <h1>Ability Targeting</h1>
-        <p> &nbsp &nbsp &nbsp &nbsp We wanted the targeting of abilities to be easy and intuitive. We didn't want them to be difficult to aim, and we also wanted the player to know beforehand who or what they were
-          targeting. Also, because crew abilities can target both enemies and environmental objects, the targeting system needed to be able to accommodate for this. The current system now targets the closest thing to the center of the screen
-          , whether that is an enemy or an environmental object. What you are targeting is also clearly shown by the UI.
-        </p>
-
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/8Md5zdt8Lk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p></p>
         <h2>What I Did</h2>
         <ul>
           <li>
             <p>Everything related to the targeting of abilities, and it's connection to the UI. (I did not create the UI art asset or do the UI animation, but I did program the logic to determine when it should be shown)</p>
           </li>
         </ul>
+        <p></p>
+        <h2>Further Explanation</h2>
+        <p> &nbsp &nbsp &nbsp &nbsp We wanted the targeting of abilities to be easy and intuitive. We didn't want them to be difficult to aim, and we also wanted the player to know beforehand who or what they were
+          targeting. Also, because crew abilities can target both enemies and environmental objects, the targeting system needed to be able to accommodate for this. The current system now targets the closest thing to the center of the screen
+          , whether that is an enemy or an environmental object. What you are targeting is also clearly shown by the UI.
+        </p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/8Md5zdt8Lk8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
       </div>
 
 
       <div class="post">
         <a name="levelscripting"></a>
         <h1>Level Scripting</h1>
-        <p> &nbsp &nbsp &nbsp &nbsp After we finally nailed down our core mechanic, <a href="#abilities">the Follow-Up System</a>, we realized that because it was pretty different from any other games
-          most of our playtester had played, it was hard to make sure they understood the mechanics enough to use them effectively without us telling them exactly what to do. This made us realize that even though we
-          were only making a slice of a game for our submission to the E3 competition, we would probably need a tutorial section to help players get the hang of Follow-Ups. So the director, Jessica Runyan, and I
-          designed a tutorial area that would lead into the main level that was being built. We tried to create a tutorial that would teach players what they needed and hopefully be engaging enough that they wouldn't
-          just skip through all the text boxes.</p>
-
         <p></p>
-        <p>This is the same video that is at the top of the page, but it shows off the tutorial area well, so if you didn't get the chance to watch it above, or if you don't remember it, here it is again.</p>
-
-        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/vGWIWArCCz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h2>What I Did</h2>
         <ul>
           <li>
@@ -261,6 +264,19 @@
             <p>Worked with UI created by another student (Dallin Pulsipher) to ensure the dialog was properly displayed at the correct moments</p>
           </li>
         </ul>
+        <p></p>
+        <h2>Further Explanation</h2>
+        <p> &nbsp &nbsp &nbsp &nbsp After we finally nailed down our core mechanic, <a href="#abilities">the Follow-Up System</a>, we realized that because it was pretty different from any other games
+          most of our playtester had played, it was hard to make sure they understood the mechanics enough to use them effectively without us telling them exactly what to do. This made us realize that even though we
+          were only making a slice of a game for our submission to the E3 competition, we would probably need a tutorial section to help players get the hang of Follow-Ups. So the director, Jessica Runyan, and I
+          designed a tutorial area that would lead into the main level that was being built. We tried to create a tutorial that would teach players what they needed and hopefully be engaging enough that they wouldn't
+          just skip through all the text boxes.</p>
+
+        <p></p>
+        <p>This is the same video that is at the top of the page, but it shows off the tutorial area well, so if you didn't get the chance to watch it above, or if you don't remember it, here it is again.</p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/vGWIWArCCz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
       </div>
     </div>
   </div>
