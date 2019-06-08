@@ -43,7 +43,8 @@
       <div class="post">
         <h1>Intro</h1>
         <p> &nbsp &nbsp &nbsp &nbsp This is set up as a blog of sorts to allow me to display the work I've done on Brigham Young University's game project "Avast Ye",
-          for which I was Gameplay Programming/Design Lead. Each section starts with a brief list of the specific things I worked on related to the title mechanic. This is followed by a longer description of how the
+          for which I was Gameplay Programming/Design Lead, as well as one of my recent personal projects "Electro-Thief". Each section starts with a brief list of the specific things I worked on related to the title mechanic. This is followed by a
+          longer description of how the
           mechanic came to be as well as videos or images of the mechanic in game.</p>
         <p></p>
         <h2>Brief Explanation of Avast Ye</h2>
@@ -75,6 +76,8 @@
 
       <div class="post">
         <h2> Links to Sections:</h2>
+        <p></p>
+        <h3> Avast Ye</h3>
         <a href="#abilities">Abilities and Follow-Up System</a>
         <p></p>
         <a href="#enemyai">Enemy AI</a>
@@ -83,8 +86,12 @@
         <p></p>
         <a href="#levelscripting">Level Scripting</a>
         <p></p>
-        <p>Ally AI (coming soon)</p>
-        <p>Other Bits and Pieces (coming soon)</p>
+        <a href="#boss"> Boss Fights </a>
+        <p></p>
+
+        <h3 href="#thief">Electro-Thief (Personal Project)</h3>
+        <p>Coming Soon</p>
+
       </div>
 
 
@@ -278,6 +285,60 @@
         <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/vGWIWArCCz4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
       </div>
+
+      <div class="post">
+        <a name="boss"></a>
+        <h1>Boss Fights</h1>
+        <p></p>
+        <h2>What I Did</h2>
+        <ul>
+          <li>
+            <p>Designed All Boss Fight Mechanics</p>
+          </li>
+          <li>
+            <p>Implmented Boss Encounters from prototype to finished version</p>
+          </li>
+          <li>
+            <p>Designed and Implemented Boss Abilities and AI</p>
+          </li>
+        </ul>
+        <p></p>
+        <h2>Further Explanation</h2>
+        <p> &nbsp &nbsp &nbsp &nbsp As the time to submit the game to E3 grew closer, we realized that our idea for the main boss (pictured below) would not be possible to polish before our deadline due to the kinds of animations he would need.
+          So we opted to create a simple mini boss as a placeholder. He was just a larger Cockroach enemy with a different texture and a few special abilities.</p>
+        <img id="centigreed" src="/images/centigreed.jpg">
+        <p class="video_text">Pirate King Centigreed, to be added to Avast Ye in an update before Feb 2020. Model and Texture credit: Sloan Poleman</p>
+        <p> However, after our E3 submission we talked about keeping him around, and I had the idea
+          of having multiple versions of him that the player would fight as they progressed through the level. The other leads liked this idea and after discussing it we decided that it would be the same cockroach and he would run away each time
+          the player fought him until the final encounter. We also decided that he would be Centigreed's first mate who was trying to keep you from getting to his captain.</p>
+        <p></p>
+        <p> &nbsp &nbsp &nbsp &nbsp When designing the last two encounters I wanted to have each one be different from the last. I designed the Cannon Boss Fight first, and the pillar destruction came from wanting to use the boss fight to test what
+          the player has learned about Luna, their
+          newly acquired Witch Doctor companion. One of Luna's abilities is to levitate things, and before the boss fight there are several opportunities to use her levitate ability to lift objects in the world. In the boss fight, two of the three
+          chalk pillars require that
+          the player use the levitate to lift bombs closer to the weak points. Before this, however, the first pillar has it's weak point at it's base to allow the player to first experience the interaction between bombs and weak points and then see
+          if they can make the connection
+          to use levitate to get closer to those weakpoints.</p>
+        <p> &nbsp &nbsp &nbsp &nbsp For the Final encounter I wanted to do something similar to what the player had already experienced, but force the player to think about the fight differently than before, especially in the melee fight.
+          So I gave the Boss a shield that blocked incoming damage and cancelled Follow-Ups when it was up. This forced players to strategize when to use their Follow-Ups so they would be effective. I tried to make it so that there wasn't a super
+          specific way players had to fight him too. Players area able to break the shield after a certain amount of damage, or disable the shield temporarily wiht abilities like the Bull Ant Charge, and Witch Doctor Levitate, or plyaers
+          can also wait to attack when the shield is lowered. I also wanted to use more combinations of Crewmember abilites like in the Cannon fight, but because the Bull Ant wasn't used much in the Cannon Fight, I wanted him to be a key part
+          in this fight. Thus the main combo in the thrown objects stage is to stop a projectile with Levitate, and then knock it back at the Boss with the Bull Ant Charge.</p>
+        <p></p>
+        <p>Below are videos of the 3 encounters with the Cockroach Boss. Note that at the time these videos were taken
+          the boss had no animation for running away so he plays his death animation in each encounter instead.</p>
+
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/sHZLP-_apnE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text">First Cockroach Boss Encounter</p>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/wnqIubQ6gvY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text">Second Cockroach Boss Encounter</p>
+        <p class="video_text">Video will soon be replaced with new video displaying the new textures for the chalk pillars that more clearly show the weak points</p>
+        <iframe class="myvideo" width="560" height="315" src="https://www.youtube.com/embed/zumd7D8ZKLE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video_text">Final Cockroach Boss Encounter</p>
+        <p class="video_text">Video will be replaced when new animations for raising the shield and throwing objects are added to the Boss</p>
+      </div>
+
+
     </div>
   </div>
 

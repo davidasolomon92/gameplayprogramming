@@ -174,3 +174,10 @@ html {
   margin-top: 30px;
   padding-left: 20px;
 }
+
+#centigreed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50% !important;
+}
